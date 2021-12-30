@@ -11,19 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GameCubit()..initGame(),
-      child: BlocConsumer<GameCubit, GameState>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          return MaterialApp(
-            title: 'Puzzle Demo',
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
-            home: GamePage(),
-          );
-        },
-      ),
-    );
+        create: (context) => GameCubit()..initGame(),
+        child: MaterialApp(
+          title: 'Puzzle Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: GamePage(),
+        ));
   }
 }
